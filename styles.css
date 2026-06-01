@@ -311,6 +311,33 @@ body {
 .diagram-card .mermaid { display: flex; justify-content: center; margin: 0 auto; }
 .diagram-card .mermaid svg { height: auto; max-width: none; }
 
+/* ---------- Comparison table ---------- */
+.cmp-legend { display: inline-flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-left: 4px; color: var(--text-3); font-size: 13px; }
+.cmp-wrap {
+  background: var(--surface); border: 1px solid var(--border-2);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+  overflow-x: auto; margin-bottom: 16px;
+}
+.cmp-table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 640px; }
+.cmp-table th, .cmp-table td { padding: 12px 14px; text-align: center; border-bottom: 1px solid var(--border-2); }
+.cmp-table thead th {
+  font-weight: 600; color: var(--text-2); text-align: center; vertical-align: bottom;
+  font-size: 12.5px; line-height: 1.35; position: sticky; top: 0; background: var(--surface);
+}
+.cmp-table tbody th[scope="row"] { text-align: left; font-weight: 500; color: var(--text-1); white-space: nowrap; }
+.cmp-table thead th:first-child { text-align: left; }
+.cmp-table tbody tr:last-child th, .cmp-table tbody tr:last-child td { border-bottom: 0; }
+.cmp-table tbody tr:hover td, .cmp-table tbody tr:hover th { background: var(--surface-2); }
+.cmp-self th[scope="row"] { font-weight: 700; }
+.cmp-self { background: var(--accent-soft); }
+.cmp-self:hover td, .cmp-self:hover th { background: var(--accent-soft); }
+.cmp { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; font-size: 14px; font-weight: 700; line-height: 1; }
+.cmp-y { color: #4f9d2a; }
+.cmp-p { color: #c8901f; }
+.cmp-n { color: var(--text-3); }
+html[data-theme="dark"] .cmp-y { color: #8fd56a; }
+html[data-theme="dark"] .cmp-p { color: #f0c476; }
+
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 
 @media (max-width: 560px) {

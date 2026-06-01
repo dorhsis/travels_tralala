@@ -455,6 +455,63 @@
       <li class="row-item"><i class="ti ti-cloud" style="color:#0F6E56"></i><b>Медиа вне БД:</b> файлы в объектном хранилище (S3) + CDN, в таблице MEDIA — только ссылка и метаданные.</li>
       <li class="row-item"><i class="ti ti-versions" style="color:#0F6E56"></i><b>Версионирование:</b> поле version у урока правит контент, не ломая прогресс; published даёт «черновик / опубликовано». Плюс кэш и офлайн-скачивание уроков.</li>
     </ul>
+
+    <p class="section-label">Сравнение с рынком</p>
+    <p class="arch-lead">Где наша архитектура закрывает функции целиком, где — частично, и чего в ней нет. <span class="cmp-legend"><span class="cmp cmp-y">✓</span> есть · <span class="cmp cmp-p">◑</span> частично · <span class="cmp cmp-n">✗</span> нет</span></p>
+
+    <div class="cmp-wrap">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>Продукт</th>
+            <th>Граф / структура навыков</th>
+            <th>Интервальное повторение</th>
+            <th>Адаптивность</th>
+            <th>AI-репетитор / оценка речи</th>
+            <th>Геймификация</th>
+            <th>Живые преподаватели</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cmp-self">
+            <th scope="row">Наша архитектура</th>
+            <td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-n">✗</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Duolingo</th>
+            <td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-n">✗</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Puzzle English</th>
+            <td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-n">✗</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-n">✗</span></td>
+          </tr>
+          <tr>
+            <th scope="row">EWA</th>
+            <td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-n">✗</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Skyeng</th>
+            <td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-y">✓</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Preply</th>
+            <td><span class="cmp cmp-n">✗</span></td><td><span class="cmp cmp-n">✗</span></td><td><span class="cmp cmp-n">✗</span></td><td><span class="cmp cmp-n">✗</span></td><td><span class="cmp cmp-n">✗</span></td><td><span class="cmp cmp-y">✓</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Qalan (математика)</th>
+            <td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-n">✗</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-p">◑</span></td>
+          </tr>
+          <tr>
+            <th scope="row">YouGlish</th>
+            <td><span class="cmp cmp-n">✗</span></td><td><span class="cmp cmp-n">✗</span></td><td><span class="cmp cmp-n">✗</span></td><td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-n">✗</span></td><td><span class="cmp cmp-n">✗</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Learn Your Way</th>
+            <td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-n">✗</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-y">✓</span></td><td><span class="cmp cmp-p">◑</span></td><td><span class="cmp cmp-n">✗</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <!-- ============ FLUTTER ============ -->
