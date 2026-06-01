@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Исследование рынка приложений для изучения английского</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.3.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+
+  <header class="hero">
+    <button class="theme-toggle" id="themeToggle" aria-label="Сменить тему"><i class="ti ti-moon"></i></button>
+    <span class="eyebrow"><i class="ti ti-chart-dots"></i>Mobile Research · 2024–2025</span>
+    <h1>Рынок приложений для изучения английского</h1>
+    <p class="sub">Объём рынка, причины оттока, механики удержания, реальная эффективность обучения и незакрытые ниши — основа для нового продукта.</p>
+  </header>
+
+  <h2 class="sr-only">Полный исследовательский отчёт по приложениям для изучения английского языка</h2>
+
+  <nav class="nav" id="nav">
+    <button class="nav-btn active" data-page="negatives"><i class="ti ti-mood-sad"></i>Негатив</button>
+    <button class="nav-btn" data-page="hooks"><i class="ti ti-anchor"></i>Механики</button>
+    <button class="nav-btn" data-page="learning"><i class="ti ti-school"></i>Обучение</button>
+    <button class="nav-btn" data-page="gaps"><i class="ti ti-bulb"></i>Возможности</button>
+    <button class="nav-btn" data-page="platforms"><i class="ti ti-apps"></i>Платформы</button>
+    <button class="nav-btn" data-page="architecture"><i class="ti ti-sitemap"></i>Архитектура</button>
+    <button class="nav-btn" data-page="flutter"><i class="ti ti-brand-flutter"></i>Flutter</button>
+  </nav>
+
+  <!-- ============ NEGATIVES ============ -->
+  <section id="page-negatives" class="page active">
+    <p class="section-label">Топ жалоб по категориям</p>
+
+    <div class="app-section">
+      <div class="app-header"><p class="app-name">HelloTalk / Tandem / Speaky</p><span class="badge badge-bad">Соцсети</span></div>
+      <ul class="row-list">
+        <li class="row-item"><i class="ti ti-ghost" style="color:#E24B4A"></i>Ghosting — пишешь, тебе не отвечают. Тратишь 20 минут на представление, человек читает и молчит</li>
+        <li class="row-item"><i class="ti ti-heart-off" style="color:#E24B4A"></i>Используют как dating app — большинство ищет романтику, а не языковой обмен</li>
+        <li class="row-item"><i class="ti ti-clock" style="color:#BA7517"></i>Разные часовые пояса делают живое общение почти невозможным</li>
+        <li class="row-item"><i class="ti ti-bug" style="color:#E24B4A"></i>Speaky: сообщения пропадают, приложение падает, годами не обновляется</li>
+        <li class="row-item"><i class="ti ti-lock" style="color:#BA7517"></i>Tandem: очередь на верификацию до 7 дней, урезанный бесплатный тариф</li>
+        <li class="row-item"><i class="ti ti-chart-line" style="color:#BA7517"></i>Нет структурированного прогресса — ты общаешься, но не знаешь, растёт ли уровень</li>
+      </ul>
+    </div>
+
+    <div class="app-section">
+      <div class="app-header"><p class="app-name">Anki</p><span class="badge badge-warn">SRS</span></div>
+      <ul class="row-list">
+        <li class="row-item"><i class="ti ti-brain" style="color:#E24B4A"></i>Очень крутая кривая входа — нужно учиться использовать сам инструмент неделями</li>
+        <li class="row-item"><i class="ti ti-calendar-x" style="color:#E24B4A"></i>«Anki jail» — очередь повторений растёт быстрее, чем ты успеваешь делать</li>
+        <li class="row-item"><i class="ti ti-palette-off" style="color:#BA7517"></i>Интерфейс устарел на 10+ лет, отпугивает молодых пользователей</li>
+        <li class="row-item"><i class="ti ti-pencil" style="color:#BA7517"></i>Все карточки создаёшь вручную — огромные затраты времени до начала учёбы</li>
+      </ul>
+    </div>
+
+    <div class="app-section">
+      <div class="app-header"><p class="app-name">Quizlet</p><span class="badge badge-warn">Карточки</span></div>
+      <ul class="row-list">
+        <li class="row-item"><i class="ti ti-math-function" style="color:#E24B4A"></i>Убрали настоящий SRS-алгоритм в 2020 — теперь просто цикличный показ карточек без расписания</li>
+        <li class="row-item"><i class="ti ti-list-check" style="color:#BA7517"></i>Multiple choice как костыль — угадываешь, а не учишь</li>
+        <li class="row-item"><i class="ti ti-stars" style="color:#888780"></i>Суперсилы и мемы раздражают, отвлекают от учёбы</li>
+      </ul>
+    </div>
+
+    <div class="app-section">
+      <div class="app-header"><p class="app-name">Memrise</p><span class="badge badge-warn">SRS + видео</span></div>
+      <ul class="row-list">
+        <li class="row-item"><i class="ti ti-trash" style="color:#E24B4A"></i>Удалили все пользовательские курсы в 2021 — огромная волна негатива</li>
+        <li class="row-item"><i class="ti ti-versions" style="color:#BA7517"></i>Качество курсов от сообщества было непредсказуемым</li>
+        <li class="row-item"><i class="ti ti-credit-card-off" style="color:#BA7517"></i>Платная подписка нужна для большинства полезных функций</li>
+      </ul>
+    </div>
+
+    <div class="app-section">
+      <div class="app-header"><p class="app-name">LingQ</p><span class="badge badge-warn">Чтение</span></div>
+      <ul class="row-list">
+        <li class="row-item"><i class="ti ti-spell-check" style="color:#E24B4A"></i>Полностью нет грамматических объяснений — философия «приобретай, не изучай» подходит не всем</li>
+        <li class="row-item"><i class="ti ti-microphone-off" style="color:#E24B4A"></i>Нет практики говорения и письма в базовом тарифе</li>
+        <li class="row-item"><i class="ti ti-list-numbers" style="color:#BA7517"></i>Любое слово из словаря автоматически падает в огромный список — неудобная навигация</li>
+        <li class="row-item"><i class="ti ti-device-desktop-off" style="color:#BA7517"></i>UX ощущается устаревшим, несинхронный опыт между устройствами</li>
+        <li class="row-item"><i class="ti ti-coin" style="color:#BA7517"></i>Высокая цена для студентов из развивающихся стран</li>
+      </ul>
+    </div>
+
+    <div class="app-section">
+      <div class="app-header"><p class="app-name">Grammarly</p><span class="badge badge-good">Письмо</span></div>
+      <ul class="row-list">
+        <li class="row-item"><i class="ti ti-robot" style="color:#BA7517"></i>Агрессивные подсказки делают текст роботоподобным, неестественным</li>
+        <li class="row-item"><i class="ti ti-disabled" style="color:#E24B4A"></i>Стал «костылём» — пользователи перестают понимать грамматику сами</li>
+        <li class="row-item"><i class="ti ti-wifi-off" style="color:#BA7517"></i>Не работает без интернета, прерывает рабочий поток</li>
+        <li class="row-item"><i class="ti ti-tag-off" style="color:#BA7517"></i>Премиум слишком дорог для набора предоставляемых фич</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ HOOKS ============ -->
+  <section id="page-hooks" class="page">
+    <p class="section-label">Как приложения держат пользователей</p>
+
+    <div class="hook-card">
+      <p class="hook-title"><i class="ti ti-flame" style="color:#BA7517"></i>Streak — главный крючок индустрии</p>
+      <p class="hook-desc">Серия непрерывных дней создаёт эффект «потери» — пропустить сессию психологически больно. Duolingo снизил churn с 47% до 28% за 3 года во многом благодаря стрикам. Busuu и Memrise используют тот же механизм.</p>
+    </div>
+
+    <div class="hook-card">
+      <p class="hook-title"><i class="ti ti-trophy" style="color:#BA7517"></i>Лиги и лидерборды</p>
+      <p class="hook-desc">Еженедельные лиги (Bronze → Diamond) создают краткосрочную конкурентную петлю. Пользователи возвращаются, чтобы не «вылететь» из лиги, а не только чтобы учиться. Это FOMO в чистом виде.</p>
+    </div>
+
+    <div class="hook-card">
+      <p class="hook-title"><i class="ti ti-chart-arrows-vertical" style="color:#378ADD"></i>XP и визуализация прогресса</p>
+      <p class="hook-desc">Очки опыта дают немедленное вознаграждение. «Сколько слов я выучил» — основная мотивирующая метрика LingQ. Brainscape показывает % уверенности по каждой теме. Визуальный прогресс снижает тревогу о «стагнации».</p>
+    </div>
+
+    <div class="hook-card">
+      <p class="hook-title"><i class="ti ti-bell" style="color:#534AB7"></i>Push-уведомления и «напоминалки»</p>
+      <p class="hook-desc">Персонализированные уведомления по оптимальному времени пользователя. Duolingo печально известен агрессивными нотификациями — но они работают. У Anki нет нотификаций — и это одна из причин высокого отсева.</p>
+    </div>
+
+    <div class="hook-card">
+      <p class="hook-title"><i class="ti ti-users" style="color:#0F6E56"></i>Социальные обязательства</p>
+      <p class="hook-desc">HelloTalk и Tandem удерживают через ответственность перед партнёром — ты не просто бросаешь приложение, ты «подводишь» живого человека. Busuu использует проверку текстов сообществом — ждёшь отзывов живых людей.</p>
+    </div>
+
+    <div class="hook-card">
+      <p class="hook-title"><i class="ti ti-lock-open" style="color:#993C1D"></i>Freemium-давление</p>
+      <p class="hook-desc">Tandem жёстко ограничивает бесплатный тариф по количеству сообщений. LingQ урезает лимит неизвестных слов. Quizlet убирает ключевые функции за пэйвол. Это не просто монетизация — это механика конверсии через «боль».</p>
+    </div>
+
+    <div class="hook-card">
+      <p class="hook-title"><i class="ti ti-brain" style="color:#3C3489"></i>SRS как «интеллектуальный крючок»</p>
+      <p class="hook-desc">Накопленные карточки в Anki создают «долг» — ты не можешь бросить, потому что потеряешь нажитый прогресс. Brainscape обещает, что именно твоя статистика уверенности — ценный актив. Это anchoring effect.</p>
+    </div>
+  </section>
+
+  <!-- ============ LEARNING ============ -->
+  <section id="page-learning" class="page">
+    <p class="section-label">Реальная эффективность обучения</p>
+    <div class="stat-row">
+      <div class="stat-card"><p class="stat-val">+27ч</p><p class="stat-lbl">порог значимого прогресса в приложении</p></div>
+      <div class="stat-card"><p class="stat-val">36%</p><p class="stat-lbl">бросают Babbel в ходе исследования (MSU)</p></div>
+    </div>
+
+    <p class="section-label">Что работает — данные исследований</p>
+    <div class="app-section">
+      <ul class="row-list">
+        <li class="row-item"><i class="ti ti-check" style="color:#3B6D11"></i>Словарный запас и рецептивные навыки (чтение, аудирование) — все приложения улучшают стабильно</li>
+        <li class="row-item"><i class="ti ti-check" style="color:#3B6D11"></i>Busuu лидирует по чтению, грамматике и устной речи среди Duolingo / Babbel / Busuu</li>
+        <li class="row-item"><i class="ti ti-check" style="color:#3B6D11"></i>SRS (Anki) даёт +6–13% на стандартизированных тестах по сравнению с обычным повторением</li>
+        <li class="row-item"><i class="ti ti-check" style="color:#3B6D11"></i>Геймификация снижает dropout rate на 22% по сравнению с веб-форматами</li>
+        <li class="row-item"><i class="ti ti-check" style="color:#3B6D11"></i>Персонализация повышает вовлечённость — 48% по данным Busuu</li>
+      </ul>
+    </div>
+
+    <p class="section-label">Что не работает</p>
+    <div class="app-section">
+      <ul class="row-list">
+        <li class="row-item"><i class="ti ti-x" style="color:#E24B4A"></i>Разговорная речь — ни одно приложение не даёт реальной беглости без живой практики</li>
+        <li class="row-item"><i class="ti ti-x" style="color:#E24B4A"></i>Письмо — только Grammarly и Busuu хоть как-то развивают, и то с оговорками</li>
+        <li class="row-item"><i class="ti ti-x" style="color:#E24B4A"></i>Слабая корреляция между «временем в приложении» и реальным прогрессом — легко фармить XP без учёбы</li>
+        <li class="row-item"><i class="ti ti-x" style="color:#E24B4A"></i>Продвинутый уровень — Babbel практически не помогает подняться выше Beginner</li>
+        <li class="row-item"><i class="ti ti-x" style="color:#E24B4A"></i>Нет персонализированной обратной связи — алгоритмы исправляют, но не объясняют «почему»</li>
+      </ul>
+    </div>
+
+    <p class="section-label">Навыки vs приложения</p>
+    <div class="prog-row"><span class="prog-label">Словарь</span><div class="prog-bar-bg"><div class="prog-bar" data-w="88" style="background:#639922"></div></div><span class="prog-val">88%</span></div>
+    <div class="prog-row"><span class="prog-label">Чтение</span><div class="prog-bar-bg"><div class="prog-bar" data-w="80" style="background:#639922"></div></div><span class="prog-val">80%</span></div>
+    <div class="prog-row"><span class="prog-label">Аудирование</span><div class="prog-bar-bg"><div class="prog-bar" data-w="72" style="background:#EF9F27"></div></div><span class="prog-val">72%</span></div>
+    <div class="prog-row"><span class="prog-label">Грамматика</span><div class="prog-bar-bg"><div class="prog-bar" data-w="58" style="background:#EF9F27"></div></div><span class="prog-val">58%</span></div>
+    <div class="prog-row"><span class="prog-label">Говорение</span><div class="prog-bar-bg"><div class="prog-bar" data-w="28" style="background:#E24B4A"></div></div><span class="prog-val">28%</span></div>
+    <div class="prog-row"><span class="prog-label">Письмо</span><div class="prog-bar-bg"><div class="prog-bar" data-w="22" style="background:#E24B4A"></div></div><span class="prog-val">22%</span></div>
+    <p class="caption">Оценка эффективности приложений по навыкам (консенсус исследований)</p>
+  </section>
+
+  <!-- ============ GAPS ============ -->
+  <section id="page-gaps" class="page">
+    <p class="section-label">Системные пробелы — что не покрыто рынком</p>
+
+    <div class="gap-card"><p class="gap-title">Говорение без партнёра</p><p class="gap-desc">Живой разговор требует носителя или терпеливого партнёра — слишком зависимо. AI-разговорники (Speak.ai, $1B valuation 2024) — единственное решение, и оно ещё не стало мейнстримом.</p></div>
+    <div class="gap-card"><p class="gap-title">Объяснение ошибок, а не просто исправление</p><p class="gap-desc">Grammarly исправляет, но пользователь становится зависимым. Ни одно приложение не строит устойчивое понимание правил через систематическое объяснение + примеры + практику.</p></div>
+    <div class="gap-card"><p class="gap-title">Контекстное обучение слов</p><p class="gap-desc">LingQ близко подошёл, но UX сложный. Большинство SRS-приложений учат слова изолированно — без предложений, ситуаций, коллокаций.</p></div>
+    <div class="gap-card"><p class="gap-title">Адаптивный контент по уровню</p><p class="gap-desc">News in Levels делает это вручную. Нет приложения, которое автоматически адаптирует ЛЮБОЙ контент под уровень пользователя в реальном времени.</p></div>
+    <div class="gap-card"><p class="gap-title">Продвинутый уровень (B2+)</p><p class="gap-desc">Все приложения хороши на A1–B1. После B1 большинство пользователей «вырастает» из приложения. Рынок B2–C1 практически пуст.</p></div>
+    <div class="gap-card"><p class="gap-title">Измеримый прогресс по стандартам</p><p class="gap-desc">XP и стрики — это геймификация, не измерение. Пользователи не знают, где они на CEFR-шкале. Это создаёт тревогу и снижает долгосрочную мотивацию.</p></div>
+
+    <div class="divider"></div>
+    <p class="section-label">Возможности для вашего приложения</p>
+
+    <div class="opp-item"><div class="opp-head"><span class="opp-num">1</span><p class="opp-title">SRS + объяснения + контекст в одном флоу</p></div><p class="opp-desc">Карточка показывает слово — и сразу 2–3 примерных предложения + объяснение, почему именно эта форма.</p></div>
+    <div class="opp-item"><div class="opp-head"><span class="opp-num">2</span><p class="opp-title">Реальный CEFR-прогресс, не только XP</p></div><p class="opp-desc">Раз в неделю адаптивный мини-тест → показывает позицию на A1–C2 шкале → конкретный следующий шаг.</p></div>
+    <div class="opp-item"><div class="opp-head"><span class="opp-num">3</span><p class="opp-title">AI-разговорник без партнёра</p></div><p class="opp-desc">Ролевые сценарии (кафе, собеседование, путешествие) с голосовым AI + разбор ошибок после сессии.</p></div>
+    <div class="opp-item"><div class="opp-head"><span class="opp-num">4</span><p class="opp-title">Адаптация любого контента под уровень</p></div><p class="opp-desc">Пользователь вставляет текст → AI упрощает/усложняет до его уровня + подсвечивает незнакомые слова.</p></div>
+    <div class="opp-item"><div class="opp-head"><span class="opp-num">5</span><p class="opp-title">Честный антихук: «ты достаточно поработал»</p></div><p class="opp-desc">Против тренда: приложение говорит «сегодня 15 минут достаточно» вместо бесконечного фарма. Доверие как дифференциатор.</p></div>
+  </section>
+
+  <!-- ============ PLATFORMS ============ -->
+  <section id="page-platforms" class="page">
+    <p class="section-label">Языковой обмен с живыми людьми</p>
+    <div class="plat-grid">
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-messages"></i><p class="plat-name">HelloTalk</p><span class="badge badge-bad">Обмен</span></div>
+        <p class="plat-principle">Соцсеть языкового обмена: находишь носителя нужного языка и общаешься напрямую — текст, голос, видео.</p>
+        <div class="plat-feats"><span class="chip">Перевод в чате</span><span class="chip">Исправление сообщений</span><span class="chip">Moments-лента</span><span class="chip">Голосовые комнаты</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-arrows-exchange"></i><p class="plat-name">Tandem</p><span class="badge badge-bad">Обмен</span></div>
+        <p class="plat-principle">Подбирает партнёра по языку и интересам; общение через чат и видеозвонки, плюс платные репетиторы.</p>
+        <div class="plat-feats"><span class="chip">Видеозвонки</span><span class="chip">Встроенные исправления</span><span class="chip">Профи-репетиторы</span><span class="chip">Подбор по интересам</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-user-search"></i><p class="plat-name">Speaky</p><span class="badge badge-bad">Обмен</span></div>
+        <p class="plat-principle">Сообщество для поиска собеседников по языку и хобби; основной упор — на текстовый чат.</p>
+        <div class="plat-feats"><span class="chip">Поиск по интересам</span><span class="chip">Фильтры по языку</span><span class="chip">Простой чат</span></div>
+      </div>
+    </div>
+
+    <p class="section-label">Структурированные курсы</p>
+    <div class="plat-grid">
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-certificate"></i><p class="plat-name">Busuu</p><span class="badge badge-good">Курсы</span></div>
+        <p class="plat-principle">Структурированные курсы по уровням CEFR (A1–C1) + проверка твоих текстов носителями из сообщества.</p>
+        <div class="plat-feats"><span class="chip">CEFR-программа</span><span class="chip">Проверка сообществом</span><span class="chip">SRS-словарь</span><span class="chip">AI-разбор</span><span class="chip">Сертификаты</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-video"></i><p class="plat-name">Memrise</p><span class="badge badge-warn">Словарь</span></div>
+        <p class="plat-principle">Запоминание слов через интервальные повторения и видеоклипы с настоящими носителями («Learn with locals»).</p>
+        <button class="plat-watch" data-video="yt" data-ids="rqxLJMSaHL8,Rrzgap1q0Kc,-rnR_ptxB7E,LN9k9UBGEqc" data-title="Memrise · официальный канал"><i class="ti ti-player-play"></i>Смотреть в окне</button>
+        <div class="plat-feats"><span class="chip">Видео носителей</span><span class="chip">SRS</span><span class="chip">Мемы-ассоциации</span><span class="chip">Аудирование</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-device-gamepad-2"></i><p class="plat-name">Duolingo</p><span class="badge badge-good">Геймификация</span></div>
+        <p class="plat-principle">Короткие игровые уроки с очками, стриками и лигами; обучение маленькими порциями каждый день.</p>
+        <div class="plat-feats"><span class="chip">Стрики</span><span class="chip">Лиги</span><span class="chip">XP</span><span class="chip">Озвучка</span><span class="chip">Истории</span></div>
+      </div>
+    </div>
+
+    <p class="section-label">Карточки и интервальные повторения (SRS)</p>
+    <div class="plat-grid">
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-cards"></i><p class="plat-name">Anki</p><span class="badge badge-warn">SRS</span></div>
+        <p class="plat-principle">Открытый движок карточек на интервальных повторениях (алгоритм SM-2); всё настраивается под себя.</p>
+        <div class="plat-feats"><span class="chip">Кастомные колоды</span><span class="chip">Алгоритм SM-2</span><span class="chip">Плагины</span><span class="chip">Синхронизация</span><span class="chip">Медиа в карточках</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-cards"></i><p class="plat-name">Quizlet</p><span class="badge badge-warn">Карточки</span></div>
+        <p class="plat-principle">Наборы карточек и режимы изучения (Learn, Match, Test) с игровыми механиками поверх.</p>
+        <div class="plat-feats"><span class="chip">Режимы Learn/Test</span><span class="chip">Игра Match</span><span class="chip">Готовые наборы</span><span class="chip">AI-подсказки</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-gauge"></i><p class="plat-name">Brainscape</p><span class="badge badge-warn">SRS</span></div>
+        <p class="plat-principle">Повторение на основе уверенности (CBR): оцениваешь знание от 1 до 5, алгоритм строит расписание.</p>
+        <div class="plat-feats"><span class="chip">Оценка 1–5</span><span class="chip">Адаптивная очередь</span><span class="chip">Статистика уверенности</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-brain"></i><p class="plat-name">SuperMemo</p><span class="badge badge-warn">SRS</span></div>
+        <p class="plat-principle">Прародитель интервальных повторений; алгоритм SM-18 + инкрементальное чтение длинных текстов.</p>
+        <div class="plat-feats"><span class="chip">Алгоритм SM-18</span><span class="chip">Инкрементальное чтение</span><span class="chip">Глубокая статистика</span></div>
+      </div>
+    </div>
+
+    <p class="section-label">Обучение через контент</p>
+    <div class="plat-grid">
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-book"></i><p class="plat-name">LingQ</p><span class="badge badge-warn">Чтение</span></div>
+        <p class="plat-principle">Обучение через чтение и прослушивание настоящего контента; тапаешь незнакомое слово — учишь его в контексте.</p>
+        <div class="plat-feats"><span class="chip">Импорт контента</span><span class="chip">Тап-перевод</span><span class="chip">Счётчик известных слов</span><span class="chip">Аудио + текст</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-columns-2"></i><p class="plat-name">Beelinguapp</p><span class="badge badge-warn">Чтение</span></div>
+        <p class="plat-principle">Параллельное чтение: текст на твоём и изучаемом языке рядом + аудиокнига с подсветкой строк.</p>
+        <div class="plat-feats"><span class="chip">Параллельный текст</span><span class="chip">Аудио-караоке</span><span class="chip">Истории по уровням</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-news"></i><p class="plat-name">News in Levels</p><span class="badge badge-warn">Чтение</span></div>
+        <p class="plat-principle">Новости в трёх уровнях сложности с аудио — один сюжет, разная лексика под твой уровень.</p>
+        <div class="plat-feats"><span class="chip">3 уровня сложности</span><span class="chip">Аудиоверсия</span><span class="chip">Разбор слов</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-puzzle"></i><p class="plat-name">Puzzle English</p><span class="badge badge-warn">Видео</span></div>
+        <p class="plat-principle">Обучение через ролики, сериалы и песни; «пазлы» — собираешь предложение из слов на слух.</p>
+        <div class="plat-feats"><span class="chip">Видео-пазлы</span><span class="chip">Сериалы</span><span class="chip">Песни</span><span class="chip">Тренажёры грамматики</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-head"><i class="ti ti-movie"></i><p class="plat-name">EWA</p><span class="badge badge-warn">Контент</span></div>
+        <p class="plat-principle">Учёба через книги и фильмы с двойными субтитрами и карточками новых слов.</p>
+        <button class="plat-watch" data-video="yt" data-ids="mm_J0tiK0_4,mkZQ-XEOVGY,9sX0H1XsCVM,Q1gWUNztMgw" data-title="EWA · официальный канал"><i class="ti ti-player-play"></i>Смотреть в окне</button>
+        <div class="plat-feats"><span class="chip">Книги</span><span class="chip">Фильмы с субтитрами</span><span class="chip">Карточки слов</span><span class="chip">Аудио</span></div>
+      </div>
+    </div>
+
+    <p class="section-label">Видео-практика произношения</p>
+    <div class="plat-grid">
+      <div class="plat-card featured">
+        <div class="plat-head"><i class="ti ti-brand-youtube"></i><p class="plat-name">Youglish</p><span class="featured-tag">▶ видео в окне</span></div>
+        <p class="plat-principle">Вводишь слово или фразу — Youglish находит реальные ролики на YouTube, где это произносят носители, и проигрывает прямо в окне с субтитрами.</p>
+        <p class="plat-note"><b>Демо:</b> нажми «Открыть в окне» — введи любое слово и слушай настоящее произношение в контексте, не выходя из отчёта.</p>
+        <button class="plat-watch" data-video="youglish" data-title="Youglish · произношение в контексте"><i class="ti ti-player-play"></i>Открыть в окне</button>
+        <div class="plat-feats"><span class="chip">Реальные видео</span><span class="chip">Субтитры</span><span class="chip">Любые акценты</span></div>
+      </div>
+    </div>
+
+    <p class="section-label">Интересные кейсы</p>
+    <div class="plat-grid">
+      <div class="plat-card featured">
+        <div class="plat-head"><i class="ti ti-chalkboard"></i><p class="plat-name">Skyeng</p><span class="featured-tag">★ кейс</span></div>
+        <p class="plat-principle">Онлайн-школа с живыми уроками 1-на-1 на собственной платформе Vimbox; методист подбирает преподавателя, есть ДЗ и трекинг прогресса.</p>
+        <p class="plat-note"><b>User flow:</b> заявка → бесплатный вводный урок → подбор преподавателя → персональный план → живые уроки в Vimbox → домашка и разбор с куратором.</p>
+        <div class="plat-feats"><span class="chip">Живые уроки 1:1</span><span class="chip">Платформа Vimbox</span><span class="chip">Личный план</span><span class="chip">Домашние задания</span><span class="chip">Куратор</span></div>
+      </div>
+      <div class="plat-card featured">
+        <div class="plat-head"><i class="ti ti-movie"></i><p class="plat-name">Qalan English</p><span class="featured-tag">★ кейс</span></div>
+        <p class="plat-principle">Обучение через анимацию и мультфильмы — лексика и фразы подаются прямо внутри сюжета.</p>
+        <p class="plat-note"><b>Фишка:</b> учишься, смотря мультики — слова запоминаются в контексте истории, а не списком.</p>
+        <div class="plat-feats"><span class="chip">Обучение через мультики</span><span class="chip">Сюжетная лексика</span><span class="chip">Аудиовизуальный контент</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARCHITECTURE ============ -->
+  <section id="page-architecture" class="page">
+    <p class="section-label">Архитектура приложения</p>
+    <p class="arch-lead">Внутренний код платформ вроде Coursera закрыт, но архитектурную «ДНК» можно собрать из общедоступного функционала. Технический скелет — четыре слоя сверху вниз: клиенты → шлюз → ядро сервисов → данные.</p>
+
+    <div class="diagram-card"><div class="mermaid" id="diagArch">flowchart TB
+  M["Мобильное приложение (mobile-first)"]
+  W["Веб"]
+  GW{{"API-шлюз — авторизация, маршрутизация"}}
+  subgraph L["Учебное ядро"]
+    SG["Граф навыков CEFR"]
+    SRS["SRS — интервальное повторение"]
+    AD["Адаптивный движок"]
+  end
+  subgraph AIS["AI-сервисы"]
+    AIT["Разговорный AI-репетитор"]
+    PR["Оценка произношения"]
+  end
+  subgraph ENG["Вовлечение"]
+    GM["Геймификация: streak, XP, лиги"]
+    REC["Рекомендации"]
+  end
+  subgraph DATA["Слой данных"]
+    CDB[("Контент-БД")]
+    PDB[("БД прогресса")]
+    AN[("Аналитика")]
+  end
+  M --> GW
+  W --> GW
+  GW --> L
+  GW --> AIS
+  GW --> ENG
+  L --> CDB
+  L --> PDB
+  AIS --> PDB
+  ENG --> AN</div></div>
+
+    <div class="hook-card">
+      <p class="hook-title"><i class="ti ti-route" style="color:#378ADD"></i>Клиенты → шлюз</p>
+      <p class="hook-desc">Мобильное приложение (главное, mobile-first) и веб-версия обращаются к единому API-шлюзу — он отвечает за авторизацию и маршрутизацию запросов.</p>
+    </div>
+    <div class="hook-card">
+      <p class="hook-title"><i class="ti ti-stack-2" style="color:#534AB7"></i>Ядро сервисов — три группы</p>
+      <p class="hook-desc"><b>Учебное ядро</b> (педагогика как у Khan Academy): граф навыков CEFR задаёт зависимости тем, движок SRS возвращает слова перед тем, как ты их забудешь, адаптивный движок подбирает сложность. <b>AI-сервисы</b> — главный дифференциатор: разговорный AI-репетитор и оценка произношения. <b>Вовлечение</b>: геймификация (streak, XP, лиги) и рекомендации «что учить дальше».</p>
+    </div>
+    <div class="hook-card">
+      <p class="hook-title"><i class="ti ti-database" style="color:#0F6E56"></i>Слой данных</p>
+      <p class="hook-desc">Контент-БД (уроки и упражнения, масштабируемые через UGC-модель Udemy), БД прогресса (профиль и статистика каждого пользователя) и аналитика — без неё не оптимизировать удержание.</p>
+    </div>
+
+    <p class="section-label">Граф навыков по уровням CEFR</p>
+    <p class="arch-lead">Карта зависимостей: каждый навык — узел, а стрелки показывают, что нужно освоить раньше, чтобы открылся следующий. Уровни CEFR (A1→C2) задают «этажи» этой карты.</p>
+
+    <div class="diagram-card"><div class="mermaid" id="diagSkill">flowchart LR
+  subgraph A1["A1"]
+    PS["Present Simple"]
+    L1["Базовая лексика"]
+    C1["Приветствие / знакомство"]
+  end
+  subgraph A2["A2"]
+    PaS["Past Simple"]
+    L2["Лексика: еда, путешествия"]
+    C2["Заказать еду"]
+  end
+  subgraph B1["B1"]
+    PP["Present Perfect"]
+    C3["Рассказать о планах"]
+  end
+  PS --> PaS
+  PaS --> PP
+  L1 --> L2
+  C1 --> C2
+  PS --> C2
+  PaS --> C3
+  L2 --> C3</div></div>
+
+    <ul class="row-list">
+      <li class="row-item"><i class="ti ti-point" style="color:#3C3489"></i><b>Узел — атомарный навык:</b> не «уровень A1» целиком, а конкретный кусок — одно правило (Present Simple), кластер лексики или функция («заказать еду»). Чем мельче узлы, тем точнее подбор.</li>
+      <li class="row-item"><i class="ti ti-arrow-right" style="color:#3C3489"></i><b>Стрелки — зависимости:</b> «B не откроется, пока не освоен A». Технически это направленный ациклический граф (DAG) — циклов быть не должно.</li>
+      <li class="row-item"><i class="ti ti-layers-subtract" style="color:#3C3489"></i><b>Уровни CEFR — «полосы»:</b> нужны для понятного прогресса и цели/сертификата. Но обучение идёт по графу, а не по уровням — зависимости могут перепрыгивать границу.</li>
+      <li class="row-item"><i class="ti ti-lock-open" style="color:#3C3489"></i><b>Разблокировка по mastery:</b> у узла не «пройдено/нет», а владение 0–100%. Движок показывает только узлы, у которых все prerequisites уже освоены.</li>
+    </ul>
+
+    <p class="section-label">Организация хранилища контента</p>
+    <p class="arch-lead">Хранилище проектируют вокруг той же идеи, что и граф: всё иерархично — курс содержит навыки, навык содержит уроки, урок содержит упражнения. Модель данных:</p>
+
+    <div class="diagram-card"><div class="mermaid" id="diagER">erDiagram
+  COURSE ||--o{ SKILL : "содержит"
+  SKILL ||--o{ SKILL_PREREQ : "зависимости"
+  SKILL ||--o{ LESSON : "содержит"
+  LESSON ||--o{ EXERCISE : "содержит"
+  EXERCISE }o--|| MEDIA : "ссылается"
+  COURSE {
+    int id
+    string title
+    bool published
+  }
+  SKILL {
+    int id
+    int course_id
+    string cefr_level
+    string title
+  }
+  SKILL_PREREQ {
+    int skill_id
+    int prereq_id
+  }
+  LESSON {
+    int id
+    int skill_id
+    int order_no
+    int version
+  }
+  EXERCISE {
+    int id
+    int lesson_id
+    string type
+    int difficulty
+    json content
+  }
+  MEDIA {
+    int id
+    string url
+    string kind
+  }</div></div>
+
+    <ul class="row-list">
+      <li class="row-item"><i class="ti ti-hierarchy" style="color:#0F6E56"></i><b>Иерархия:</b> COURSE → SKILL → LESSON → EXERCISE → MEDIA. Таблица-связка SKILL_PREREQ хранит рёбра графа зависимостей — это и есть граф навыков в виде таблиц.</li>
+      <li class="row-item"><i class="ti ti-code" style="color:#0F6E56"></i><b>content как JSON:</b> у разных типов упражнений разная структура. Общие поля — в колонках, специфику — в JSON-поле, чтобы добавлять новые типы без изменения схемы.</li>
+      <li class="row-item"><i class="ti ti-arrows-split" style="color:#0F6E56"></i><b>Контент отдельно от прогресса:</b> контент read-heavy и кэшируется, прогресс write-heavy и индивидуален. Смешивать их в одной БД — узкое место.</li>
+      <li class="row-item"><i class="ti ti-cloud" style="color:#0F6E56"></i><b>Медиа вне БД:</b> файлы в объектном хранилище (S3) + CDN, в таблице MEDIA — только ссылка и метаданные.</li>
+      <li class="row-item"><i class="ti ti-versions" style="color:#0F6E56"></i><b>Версионирование:</b> поле version у урока правит контент, не ломая прогресс; published даёт «черновик / опубликовано». Плюс кэш и офлайн-скачивание уроков.</li>
+    </ul>
+  </section>
+
+  <!-- ============ FLUTTER ============ -->
+  <section id="page-flutter" class="page">
+    <p class="section-label">Flutter — клиентский слой архитектуры</p>
+    <p class="arch-lead">Flutter — это только клиентский слой нашей архитектуры (сразу и «мобильное приложение», и «веб-версия», потому что он кроссплатформенный). Тяжёлая логика — граф навыков, генерация контента, AI, адаптивный движок — остаётся на бэкенде. Задача клиента — грамотно к нему подключиться через API-шлюз и уметь работать офлайн.</p>
+
+    <div class="diagram-card"><div class="mermaid" id="diagFlutter">flowchart TB
+  subgraph APP["Flutter-приложение (чистая архитектура)"]
+    subgraph PRES["Presentation"]
+      UI["Экраны и виджеты"]
+      ST["Состояние: Riverpod / Bloc"]
+    end
+    subgraph DOM["Domain"]
+      UC["Use cases"]
+      ENT["Сущности: урок, навык, прогресс"]
+    end
+    subgraph DAT["Data"]
+      REPO["Репозитории"]
+      REM["Remote — сеть"]
+      LOC[("Local — Drift / Hive")]
+    end
+  end
+  GW{{"API-шлюз"}}
+  BE["Бэкенд: граф навыков, AI, адаптивный движок"]
+  UI --> ST
+  ST --> UC
+  UC --> ENT
+  UC --> REPO
+  REPO --> REM
+  REPO --> LOC
+  REM <-.->|"синхронизация"| LOC
+  REM --> GW
+  GW --> BE</div></div>
+
+    <div class="hook-card">
+      <p class="hook-title"><i class="ti ti-stack-2" style="color:#534AB7"></i>Три слоя внутри Flutter</p>
+      <p class="hook-desc"><b>Presentation</b> — экраны, виджеты и управление состоянием (Riverpod или Bloc). <b>Domain</b> — чистая бизнес-логика без зависимостей от Flutter: use cases («открыть следующий урок», «отметить навык освоенным») и сущности (урок, навык, прогресс). <b>Data</b> — репозитории, которые прячут за собой два источника: Remote (сеть) и Local (локальная БД). Стрелки между слоями идут только вниз — это и делает код тестируемым.</p>
+    </div>
+    <div class="hook-card">
+      <p class="hook-title"><i class="ti ti-wifi-off" style="color:#0F6E56"></i>Offline-first — главная особенность</p>
+      <p class="hook-desc">Пунктирная стрелка между Remote и Local — это синхронизация. Приложение всегда читает из локальной БД, а сеть лишь подтягивает/отправляет изменения в фоне. Уроки кэшируются заранее (чтобы заниматься в метро), а события прогресса складываются в локальную очередь и отправляются на сервер, когда появляется сеть. Для языкового приложения это критично — люди учатся урывками без стабильного интернета.</p>
+    </div>
+
+    <p class="section-label">Где живёт каждый компонент</p>
+    <ul class="row-list">
+      <li class="row-item"><i class="ti ti-sitemap" style="color:#378ADD"></i><span><b>Граф навыков CEFR:</b> структура и зависимости считаются на бэкенде. Flutter получает готовый «путь», кэширует его в Drift и рисует дерево/ленту узлов. Сам граф на клиенте не строится.</span></li>
+      <li class="row-item"><i class="ti ti-repeat" style="color:#3B6D11"></i><span><b>Интервальное повторение (SRS):</b> единственный движок, который имеет смысл частично держать на клиенте — алгоритм (SM-2 / FSRS) лёгкий, расписание повторений можно считать прямо на устройстве для офлайна. Источник истины синхронизируется с сервером.</span></li>
+      <li class="row-item"><i class="ti ti-adjustments" style="color:#BA7517"></i><span><b>Адаптивный движок:</b> остаётся на сервере (нужны данные и модели). Flutter просто отправляет ответы пользователя и получает следующий шаг.</span></li>
+      <li class="row-item"><i class="ti ti-robot" style="color:#534AB7"></i><span><b>AI-репетитор:</b> ответы стримятся через SSE или WebSocket (<code>web_socket_channel</code>), чтобы текст появлялся по мере генерации. Речь пользователя записывается плагином <code>record</code> и отправляется на сервис оценки произношения; для простых случаев — платформенный <code>speech_to_text</code>.</span></li>
+      <li class="row-item"><i class="ti ti-player-play" style="color:#E24B4A"></i><span><b>Медиа (аудио/видео):</b> проигрывается через <code>just_audio</code> и <code>video_player</code>, стримится с CDN, а для офлайна файлы кэшируются локально.</span></li>
+      <li class="row-item"><i class="ti ti-trophy" style="color:#993C1D"></i><span><b>Геймификация:</b> почти целиком presentation + state — streak, XP, лиги рисуются на клиенте, а данные берутся из БД прогресса через репозиторий.</span></li>
+    </ul>
+
+    <p class="section-label">Практический набор пакетов</p>
+    <div class="plat-feats">
+      <span class="chip">flutter_riverpod / flutter_bloc</span>
+      <span class="chip">dio + retrofit</span>
+      <span class="chip">graphql_flutter</span>
+      <span class="chip">drift</span>
+      <span class="chip">hive / shared_preferences</span>
+      <span class="chip">freezed + json_serializable</span>
+      <span class="chip">get_it</span>
+      <span class="chip">go_router</span>
+      <span class="chip">just_audio</span>
+      <span class="chip">video_player</span>
+      <span class="chip">record</span>
+      <span class="chip">web_socket_channel</span>
+      <span class="chip">speech_to_text</span>
+    </div>
+
+    <div class="divider"></div>
+    <div class="hook-card">
+      <p class="hook-title"><i class="ti ti-plug-connected" style="color:#378ADD"></i>Главный архитектурный принцип на стыке</p>
+      <p class="hook-desc">Flutter не должен знать о внутренней логике бэкенда — он общается только с API-шлюзом через репозитории. Тогда движки на сервере можно менять, не трогая клиент.</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============ Video window (modal) ============ -->
+<div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <div class="modal-head">
+      <i class="ti ti-player-play"></i>
+      <p class="modal-title" id="modalTitle">Видео</p>
+      <button class="modal-close" id="modalClose" aria-label="Закрыть">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div id="ytWrap" class="video-frame-wrap" hidden><div id="ytPlayer"></div></div>
+      <div id="yg-widget" hidden></div>
+      <div class="modal-foot" id="modalFoot" hidden>
+        <button class="plat-watch" id="nextBtn"><i class="ti ti-player-track-next"></i>Воспроизвести далее</button>
+        <span class="modal-count" id="modalCount"></span>
+      </div>
+      <p class="modal-hint" id="modalHint"></p>
+    </div>
+  </div>
+</div>
+
+<script src="https://youglish.com/public/emb/widget.js" charset="utf-8"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>if (window.mermaid) mermaid.initialize({ startOnLoad: false });</script>
+<script src="script.js"></script>
+</body>
+</html>
