@@ -588,6 +588,145 @@
       <p class="hook-title"><i class="ti ti-plug-connected" style="color:#378ADD"></i>Главный архитектурный принцип на стыке</p>
       <p class="hook-desc">Flutter не должен знать о внутренней логике бэкенда — он общается только с API-шлюзом через репозитории. Тогда движки на сервере можно менять, не трогая клиент.</p>
     </div>
+
+    <div class="divider"></div>
+    <p class="section-label">Наша архитектура vs JTS App — детальное сравнение</p>
+    <p class="arch-lead">JTS English — production-приложение на том же стеке. Разбираем, где мы идём правильно, где JTS реализовал лучше, а где обоим нужно доработать.</p>
+
+    <div class="cmp-wrap">
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th>Категория</th>
+            <th>Наша архитектура</th>
+            <th>JTS App</th>
+            <th>Вывод / Что улучшить</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="diff-jts">
+            <td>Структура модулей</td>
+            <td>Clean Architecture, 3 слоя (Presentation / Domain / Data)</td>
+            <td>Clean Architecture + Feature-модули: каждая фича — изолированный пакет со своим DI, domain и data</td>
+            <td><span class="diff-badge jts">JTS лучше</span> Feature-first разбивка масштабируется при 10+ фичах — у нас стоит принять сразу</td>
+          </tr>
+          <tr class="diff-tie">
+            <td>Управление состоянием</td>
+            <td>Riverpod или BLoC — выбор не зафиксирован</td>
+            <td>BLoC 8.x + Cubit для простого состояния; BLoC регистрируются как Factory (новый экземпляр на экран)</td>
+            <td><span class="diff-badge tie">Паритет</span> Зафиксировать BLoC как стандарт; Factory-регистрация предотвращает утечки состояния между экранами</td>
+          </tr>
+          <tr class="diff-fix">
+            <td>DI / IoC</td>
+            <td>get_it (ручная регистрация)</td>
+            <td>get_it с расширениями на каждую фичу: <code>registerAuth()</code>, <code>registerDuolingo()</code> и т.д.</td>
+            <td><span class="diff-badge fix">Улучшить</span> Добавить <code>injectable</code> + <code>@injectable</code>-аннотации для автогенерации регистраций; убрать ручной <code>GetIt.instance</code> внутри BLoC</td>
+          </tr>
+          <tr class="diff-fix">
+            <td>Навигация</td>
+            <td>go_router (версия не зафиксирована)</td>
+            <td>go_router 6.5.9 — очень старая версия (актуальна 17.x); кастомные переходы через CustomTransitionPage</td>
+            <td><span class="diff-badge fix">Улучшить</span> Обновить до go_router 17.x — в старых версиях баги с deep links и shell routes</td>
+          </tr>
+          <tr class="diff-fix">
+            <td>Сетевой слой</td>
+            <td>dio + retrofit (единый клиент)</td>
+            <td>dio И http используются одновременно — разные части кода делают запросы разными клиентами</td>
+            <td><span class="diff-badge fix">Улучшить</span> Убрать <code>http</code>, оставить только <code>dio</code> с единым перехватчиком для auth, retry и логирования</td>
+          </tr>
+          <tr class="diff-our">
+            <td>Offline-стратегия</td>
+            <td>Offline-first: Drift как основная БД, Remote только синхронизирует; прогресс копится в локальной очереди</td>
+            <td>Явной offline-стратегии нет — Hive, sqflite и SharedPrefs используются точечно без единой концепции синхронизации</td>
+            <td><span class="diff-badge our">Наша лучше</span> Для языкового приложения критично: люди учатся без интернета. Нужен единый Local-first подход с очередью синхронизации</td>
+          </tr>
+          <tr class="diff-fix">
+            <td>Хранилище</td>
+            <td>Drift (основная реляционная БД) + Hive (кэш/настройки)</td>
+            <td>sqflite + Hive + SharedPreferences + flutter_secure_storage — четыре разных хранилища без чёткого разграничения</td>
+            <td><span class="diff-badge fix">Улучшить</span> Заменить sqflite на Drift (типобезопасные запросы, миграции, тесты); SecureStorage оставить только для токенов</td>
+          </tr>
+          <tr class="diff-jts">
+            <td>Аналитика</td>
+            <td>Не описана</td>
+            <td>Двойная аналитика: Firebase Analytics (технические метрики) + Amplitude (продуктовые воронки) — разные задачи, разные инструменты</td>
+            <td><span class="diff-badge jts">JTS лучше</span> Принять ту же схему: Firebase для crash/retention, Amplitude для фичевых воронок и A/B</td>
+          </tr>
+          <tr class="diff-jts">
+            <td>Crash reporting</td>
+            <td>Не описан</td>
+            <td>Firebase Crashlytics + Firebase App Check (защита от злоупотреблений API)</td>
+            <td><span class="diff-badge jts">JTS лучше</span> Обязательный минимум для продакшна — добавить с первого дня, не откладывать</td>
+          </tr>
+          <tr class="diff-jts">
+            <td>Монетизация</td>
+            <td>Не описана</td>
+            <td>RevenueCat — единый SDK для App Store + Google Play подписок, receipt validation, paywalls</td>
+            <td><span class="diff-badge jts">JTS лучше</span> RevenueCat экономит недели работы по интеграции подписок; внедрить с первого MVP</td>
+          </tr>
+          <tr class="diff-jts">
+            <td>Remote Config</td>
+            <td>Не описан</td>
+            <td>Firebase Remote Config — флаги фич, A/B тесты, изменение контента без релиза в сторы</td>
+            <td><span class="diff-badge jts">JTS лучше</span> Позволяет итерировать быстро: включать/выключать фичи без деплоя</td>
+          </tr>
+          <tr class="diff-jts">
+            <td>Безопасность</td>
+            <td>Не описана</td>
+            <td>Три уровня: flutter_secure_storage (токены), Firebase App Check (защита API), no_screenshot (контент)</td>
+            <td><span class="diff-badge jts">JTS лучше</span> Для EdTech-приложения с платным контентом все три уровня обязательны</td>
+          </tr>
+          <tr class="diff-jts">
+            <td>Дизайн-система</td>
+            <td>Не описана</td>
+            <td>Кастомные компоненты: JtsButton, JtsSelectionChip, JtsWordCard, JtsProgressBar, JtsBottomNav + DesignTokens для отступов и типографики</td>
+            <td><span class="diff-badge jts">JTS лучше</span> Без дизайн-системы UI-код дублируется в каждой фиче — делать с первого экрана</td>
+          </tr>
+          <tr class="diff-jts">
+            <td>Адаптивный UI</td>
+            <td>Не описан</td>
+            <td>flutter_screenutil — все размеры масштабируются по референсному разрешению</td>
+            <td><span class="diff-badge jts">JTS лучше</span> Без этого приложение плохо выглядит на iPad и крупных Android-устройствах</td>
+          </tr>
+          <tr class="diff-jts">
+            <td>Локализация</td>
+            <td>Не описана</td>
+            <td>flutter_gen + intl, поддержка en + ar; LanguageCubit хранит выбор в SharedPreferences</td>
+            <td><span class="diff-badge jts">JTS лучше</span> Нам нужны ru + en + kz с первого релиза — использовать ту же схему flutter_gen + intl</td>
+          </tr>
+          <tr class="diff-jts">
+            <td>Обработка ошибок</td>
+            <td>Не описана</td>
+            <td>Иерархия: ServerException → ServerFailure, NetworkFailure, AuthFailure, ValidationFailure — строго типизированные ошибки на каждом слое</td>
+            <td><span class="diff-badge jts">JTS лучше</span> Принять ту же иерархию: UI получает Failure (не Exception) и не знает о деталях сети</td>
+          </tr>
+          <tr class="diff-our">
+            <td>Use Cases</td>
+            <td>Полноценные Use Cases с бизнес-логикой внутри; BLoC только вызывает UseCase</td>
+            <td>Use Cases тонкие — просто проксируют вызов к репозиторию; часть логики оседает в BLoC</td>
+            <td><span class="diff-badge our">Наша лучше</span> Логика в BLoC не тестируется без UI; Use Cases с логикой покрываются чистыми unit-тестами</td>
+          </tr>
+          <tr class="diff-our">
+            <td>SRS / алгоритм</td>
+            <td>SM-2 / FSRS считается на клиенте — расписание повторений доступно оффлайн</td>
+            <td>Не реализован на клиентской стороне</td>
+            <td><span class="diff-badge our">Наша лучше</span> Для языкового приложения клиентский SRS критичен: карточки работают без сети</td>
+          </tr>
+          <tr class="diff-jts">
+            <td>Обновления приложения</td>
+            <td>Не описан</td>
+            <td>AppUpdateService — проверяет версию при запуске, может форсировать обновление (блокирует UI до обновления)</td>
+            <td><span class="diff-badge jts">JTS лучше</span> Без force-update пользователи застревают на сломанных версиях</td>
+          </tr>
+          <tr class="diff-fix">
+            <td>Тестирование</td>
+            <td>Подразумевается (unit / widget / integration)</td>
+            <td>Инфраструктура тестов в коде не прослеживается</td>
+            <td><span class="diff-badge fix">Улучшить обоим</span> Покрыть Use Cases unit-тестами, BLoC — bloc_test; критичные флоу (покупка, логин) — integration-тестами</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
 </div>
